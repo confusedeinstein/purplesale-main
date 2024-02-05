@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 interface ITokenLock {
     function lockTokens(
@@ -52,6 +52,8 @@ contract Subscription is Ownable {
         mapping(address => uint256) tokensInvested;
         mapping(address => uint256) excessTokensInvested;
     }
+
+     constructor() Ownable(msg.sender) {}
 
     uint256 public devFeeInTokenPercentage = 2; // 2%
     uint256 public devFee = 5; // 5%

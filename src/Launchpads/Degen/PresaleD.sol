@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 interface ITokenLock {
     function lockTokens(
@@ -73,7 +73,7 @@ contract PresaleD is Ownable {
     address public WMATIC = 0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889;
     ITokenLock tokenLock;
 
-    constructor(address _tokenLock) {
+    constructor(address _tokenLock) Ownable(msg.sender) {
         tokenLock = ITokenLock(_tokenLock);
     }
 

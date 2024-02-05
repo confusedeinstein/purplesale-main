@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 import "./AntiBot.sol";
 
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 contract AntiBotFactory {
     mapping(address => bool) public deployedAntiBots;

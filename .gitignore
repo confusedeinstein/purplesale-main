@@ -132,6 +132,8 @@ dist
 #extras
 .directory
 cache
+lib
+deploy.md
 .deps
 artifacts
 remix-compiler.config.js

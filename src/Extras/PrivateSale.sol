@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -23,6 +23,8 @@ contract PrivateSale is Ownable {
         mapping(address => bool) whitelisted;
         mapping(address => uint256) tokensInvested;
     }
+
+    constructor()Ownable(msg.sender){}
 
     PrivSaleStruct[] public privsales;
     mapping(address => uint256[]) private userPrivsales;

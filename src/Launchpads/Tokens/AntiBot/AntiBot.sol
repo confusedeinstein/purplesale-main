@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -12,6 +12,8 @@ contract AntiBot is Ownable {
     bool public antiBotEnabled;
     mapping(address => bool) public blacklist;
     mapping(address => uint256) public lastTradeTimestamp;
+
+    constructor() Ownable(msg.sender) {}
 
     function configureAntiBot(
         uint256 _maxAmount,

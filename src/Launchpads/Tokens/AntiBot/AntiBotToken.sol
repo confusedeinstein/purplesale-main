@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.19;
+pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -41,7 +41,7 @@ contract AntiBotToken is ERC20, Ownable {
         uint8 decimals_,
         uint256 _initialSupply,
         IAntiBotFactory _antiBotFactory
-    ) ERC20(_name, _symbol) {
+    ) ERC20(_name, _symbol) Ownable(msg.sender) {
         _decimals = decimals_;
         _mint(msg.sender, _initialSupply * 10 ** uint256(_decimals));
         address antiBotAddress = _antiBotFactory.createAntiBot();
